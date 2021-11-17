@@ -53,6 +53,7 @@ namespace SlayerCalculator
             this.label7 = new System.Windows.Forms.Label();
             this.txtSlayerLeft = new System.Windows.Forms.TextBox();
             this.lblLinkCredit = new System.Windows.Forms.LinkLabel();
+            this.lblLinkRepo = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -296,11 +297,24 @@ namespace SlayerCalculator
             this.lblLinkCredit.Text = "Made by: Avery with ♥";
             this.lblLinkCredit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLinkCredit_LinkClicked);
             // 
+            // lblLinkRepo
+            // 
+            this.lblLinkRepo.AutoSize = true;
+            this.lblLinkRepo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.lblLinkRepo.Location = new System.Drawing.Point(31, 264);
+            this.lblLinkRepo.Name = "lblLinkRepo";
+            this.lblLinkRepo.Size = new System.Drawing.Size(67, 13);
+            this.lblLinkRepo.TabIndex = 23;
+            this.lblLinkRepo.TabStop = true;
+            this.lblLinkRepo.Text = "Github Repo";
+            this.lblLinkRepo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLinkRepo_LinkClicked);
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 286);
+            this.Controls.Add(this.lblLinkRepo);
             this.Controls.Add(this.lblLinkCredit);
             this.Controls.Add(this.txtSlayerLeft);
             this.Controls.Add(this.label7);
@@ -356,6 +370,7 @@ namespace SlayerCalculator
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtSlayerLeft;
         private System.Windows.Forms.LinkLabel lblLinkCredit;
+        private System.Windows.Forms.LinkLabel lblLinkRepo;
     }
 }
 

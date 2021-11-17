@@ -196,5 +196,10 @@ namespace SlayerCalculator
         {
             System.Diagnostics.Process.Start("https://github.com/Averyyyyyyyy");
         }
+
+        private void lblLinkRepo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Averyyyyyyyy/SlayerCalculator");
+        }
     }
 }
