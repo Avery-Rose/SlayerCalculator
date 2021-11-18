@@ -4,7 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,17 +24,10 @@ namespace SlayerCalculator
             mainInstance = this;
         }
 
-        /*
-        * Tier Cost and EXP
-        * 5: 100,000 Coins | 1,500 XP 
-        * 4: 50,000 Coins | 500 XP
-        * 3: 20,000 Coins | 100 XP
-        * 2: 7,500 Coins | 25 XP
-        * 1: 2,000 Coins | 5 XP
-        */
+        private const string UPDATE_URL = "https://api.github.com/repos/Averyyyyyyyy/SlayerCalculator/releases/latest";
 
+        private static readonly HttpClient client = new HttpClient();
 
-        // variables
         int tier = 0;
         bool isXpPerk = false;
         bool isPricePerk = false;
@@ -211,9 +207,22 @@ namespace SlayerCalculator
             settings.Show(this);
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private static async Task<Object> checkUpdate()
         {
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
+            var streamTask = client.GetStreamAsync(UPDATE_URL);
+            var repositories = await JsonSerializer.DeserializeAsync<Object>(await streamTask);
+            return repositories;
+        }
+
+        private async void btnUpdate_Click(object sender, EventArgs e)
+        {
+            var repository = await checkUpdate();
+            MessageBox.Show(repository.ToString());
         }
     }
 }
