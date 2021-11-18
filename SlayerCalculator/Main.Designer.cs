@@ -55,6 +55,7 @@ namespace SlayerCalculator
             this.lblLinkCredit = new System.Windows.Forms.LinkLabel();
             this.lblLinkRepo = new System.Windows.Forms.LinkLabel();
             this.btnSettings = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -320,11 +321,22 @@ namespace SlayerCalculator
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(246, 255);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(106, 23);
+            this.btnUpdate.TabIndex = 25;
+            this.btnUpdate.Text = "Check for Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 311);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.lblLinkRepo);
             this.Controls.Add(this.lblLinkCredit);
@@ -386,6 +398,7 @@ namespace SlayerCalculator
         private System.Windows.Forms.LinkLabel lblLinkCredit;
         private System.Windows.Forms.LinkLabel lblLinkRepo;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }
 

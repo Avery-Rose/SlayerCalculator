@@ -210,5 +210,10 @@ namespace SlayerCalculator
             Settings settings = new Settings();
             settings.Show(this);
         }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
