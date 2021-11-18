@@ -10,12 +10,15 @@ using System.Windows.Forms;
 
 namespace SlayerCalculator
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class Calculator : System.Windows.Forms.Form
     {
-        public Form()
+        public static Calculator mainInstance;
+
+        public Calculator()
         {
             InitializeComponent();
             radioButton1.Checked = true;
+            mainInstance = this;
         }
 
         /*
@@ -200,6 +203,12 @@ namespace SlayerCalculator
         private void lblLinkRepo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/Averyyyyyyyy/SlayerCalculator");
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show(this);
         }
     }
 }

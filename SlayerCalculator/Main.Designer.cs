@@ -1,7 +1,7 @@
 ﻿
 namespace SlayerCalculator
 {
-    partial class Form
+    partial class Calculator
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace SlayerCalculator
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Calculator));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -54,6 +54,7 @@ namespace SlayerCalculator
             this.txtSlayerLeft = new System.Windows.Forms.TextBox();
             this.lblLinkCredit = new System.Windows.Forms.LinkLabel();
             this.lblLinkRepo = new System.Windows.Forms.LinkLabel();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -289,7 +290,7 @@ namespace SlayerCalculator
             // 
             this.lblLinkCredit.AutoSize = true;
             this.lblLinkCredit.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lblLinkCredit.Location = new System.Drawing.Point(328, 264);
+            this.lblLinkCredit.Location = new System.Drawing.Point(328, 289);
             this.lblLinkCredit.Name = "lblLinkCredit";
             this.lblLinkCredit.Size = new System.Drawing.Size(118, 13);
             this.lblLinkCredit.TabIndex = 22;
@@ -301,7 +302,7 @@ namespace SlayerCalculator
             // 
             this.lblLinkRepo.AutoSize = true;
             this.lblLinkRepo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lblLinkRepo.Location = new System.Drawing.Point(31, 264);
+            this.lblLinkRepo.Location = new System.Drawing.Point(31, 289);
             this.lblLinkRepo.Name = "lblLinkRepo";
             this.lblLinkRepo.Size = new System.Drawing.Size(67, 13);
             this.lblLinkRepo.TabIndex = 23;
@@ -309,11 +310,22 @@ namespace SlayerCalculator
             this.lblLinkRepo.Text = "Github Repo";
             this.lblLinkRepo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblLinkRepo_LinkClicked);
             // 
-            // Form
+            // btnSettings
+            // 
+            this.btnSettings.Location = new System.Drawing.Point(371, 255);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(75, 23);
+            this.btnSettings.TabIndex = 24;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 286);
+            this.ClientSize = new System.Drawing.Size(484, 311);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.lblLinkRepo);
             this.Controls.Add(this.lblLinkCredit);
             this.Controls.Add(this.txtSlayerLeft);
@@ -331,10 +343,12 @@ namespace SlayerCalculator
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(500, 325);
-            this.MinimumSize = new System.Drawing.Size(500, 325);
-            this.Name = "Form";
+            this.MaximumSize = new System.Drawing.Size(500, 350);
+            this.MinimumSize = new System.Drawing.Size(500, 350);
+            this.Name = "Calculator";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Slayer Calculator";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -371,6 +385,7 @@ namespace SlayerCalculator
         private System.Windows.Forms.TextBox txtSlayerLeft;
         private System.Windows.Forms.LinkLabel lblLinkCredit;
         private System.Windows.Forms.LinkLabel lblLinkRepo;
+        private System.Windows.Forms.Button btnSettings;
     }
 }
 
