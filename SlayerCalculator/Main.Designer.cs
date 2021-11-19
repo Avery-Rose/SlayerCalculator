@@ -56,6 +56,7 @@ namespace SlayerCalculator
             this.lblLinkRepo = new System.Windows.Forms.LinkLabel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -331,11 +332,21 @@ namespace SlayerCalculator
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Location = new System.Drawing.Point(206, 289);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(31, 13);
+            this.lblVersion.TabIndex = 26;
+            this.lblVersion.Text = "0.0.0";
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 311);
+            this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.lblLinkRepo);
@@ -362,6 +373,7 @@ namespace SlayerCalculator
             this.Name = "Calculator";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Slayer Calculator";
+            this.Load += new System.EventHandler(this.Calculator_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -399,6 +411,7 @@ namespace SlayerCalculator
         private System.Windows.Forms.LinkLabel lblLinkRepo;
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
 

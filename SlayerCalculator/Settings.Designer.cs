@@ -83,9 +83,9 @@ namespace SlayerCalculator
             this.lblOpacity.AutoSize = true;
             this.lblOpacity.Location = new System.Drawing.Point(191, 63);
             this.lblOpacity.Name = "lblOpacity";
-            this.lblOpacity.Size = new System.Drawing.Size(25, 13);
+            this.lblOpacity.Size = new System.Drawing.Size(13, 13);
             this.lblOpacity.TabIndex = 4;
-            this.lblOpacity.Text = "100";
+            this.lblOpacity.Text = "1";
             // 
             // Settings
             // 
@@ -105,6 +105,7 @@ namespace SlayerCalculator
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Settings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbOpacity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

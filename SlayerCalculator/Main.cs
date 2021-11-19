@@ -207,22 +207,29 @@ namespace SlayerCalculator
             settings.Show(this);
         }
 
-        private static async Task<Object> checkUpdate()
+        /*private static async Task<Object> checkUpdate()
         {
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
-            client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
+            //client.DefaultRequestHeaders.Accept.Clear();
+            //client.DefaultRequestHeaders.Accept.Add(
+            //    new MediaTypeWithQualityHeaderValue("application/vnd.github.v3+json"));
+            //client.DefaultRequestHeaders.Add("User-Agent", ".NET Foundation Repository Reporter");
 
-            var streamTask = client.GetStreamAsync(UPDATE_URL);
-            var repositories = await JsonSerializer.DeserializeAsync<Object>(await streamTask);
-            return repositories;
+            //var streamTask = client.GetStreamAsync(UPDATE_URL);
+            //return await JsonSerializer.DeserializeAsync<Object>(await streamTask);
+        }*/
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Averyyyyyyyy/SlayerCalculator/releases");
+            // get tag name
+            // get browser_download_url
+            //var request = await checkUpdate();
+            //MessageBox.Show(request.ToString());
         }
 
-        private async void btnUpdate_Click(object sender, EventArgs e)
+        private void Calculator_Load(object sender, EventArgs e)
         {
-            var repository = await checkUpdate();
-            MessageBox.Show(repository.ToString());
+            lblVersion.Text = "1.1.1";
         }
     }
 }

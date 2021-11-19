@@ -17,10 +17,6 @@ namespace SlayerCalculator
         public Settings()
         {
             InitializeComponent();
-            chkAlwaysTop.Checked = Calculator.mainInstance.TopMost;
-            tbOpacity.Value = Convert.ToInt32(Calculator.mainInstance.Opacity * 100);
-            this.TopMost = true;
-            this.Focus();
         }
 
         private void chkAlwaysTop_CheckedChanged(object sender, EventArgs e)
@@ -39,6 +35,15 @@ namespace SlayerCalculator
             opacity = Convert.ToDouble(tbOpacity.Value) / 100;
             Calculator.mainInstance.Opacity = opacity;
             lblOpacity.Text = opacity.ToString();
+        }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+            chkAlwaysTop.Checked = Calculator.mainInstance.TopMost;
+            tbOpacity.Value = Convert.ToInt32(Calculator.mainInstance.Opacity * 100);
+            lblOpacity.Text = (Convert.ToDouble(tbOpacity.Value) / 100).ToString();
+            this.TopMost = true;
+            this.Focus();
         }
     }
 }
